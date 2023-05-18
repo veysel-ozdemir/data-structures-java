@@ -1,4 +1,4 @@
-package DoubleLinkedLists;
+package LinkedLists.DoubleLinkedLists;
 
 class Link
 {

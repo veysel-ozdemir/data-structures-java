@@ -1,4 +1,4 @@
-package DoubleEndedLists;
+package LinkedLists.DoubleEndedLists;
 
 class FirstLastList
 {

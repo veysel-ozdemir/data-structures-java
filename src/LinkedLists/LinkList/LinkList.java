@@ -1,4 +1,5 @@
-package LinkList;
+package LinkedLists.LinkList;
+
 class LinkList
 {
     private Link first; // ref to first link on list

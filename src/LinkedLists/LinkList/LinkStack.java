@@ -1,4 +1,4 @@
-package LinkList;
+package LinkedLists.LinkList;
 
 class LinkStack
 {
