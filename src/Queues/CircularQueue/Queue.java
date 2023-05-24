@@ -1,9 +1,9 @@
 package Queues.CircularQueue;
 
-class Queue
+public class Queue
 {
     private int maxSize;
-    private long[] queArray;
+    private int[] queArray;
     private int front;
     private int rear;
     private int nItems;
@@ -11,13 +11,13 @@ class Queue
     public Queue(int s) // constructor
     {
         maxSize = s;
-        queArray = new long[maxSize];
+        queArray = new int[maxSize];
         front = 0;
         rear = -1;
         nItems = 0;
     }
 
-    public void insert(long j)// put item at rear of queue
+    public void insert(int j)// put item at rear of queue
     {
         if(rear == maxSize-1)
             rear = -1; // deal with wraparound
@@ -26,17 +26,17 @@ class Queue
         nItems++; // one more item
     }
 
-    public long remove() // take item from front of queue
+    public int remove() // take item from front of queue
     {
         // get value and incr front
-        long temp = queArray[front++];
+        int temp = queArray[front++];
         if(front == maxSize) // deal with wraparound
             front = 0;
         nItems--; // one less item
         return temp;
     }
 
-    public long peekFront()
+    public int peekFront()
     {
         return queArray[front];
     }
