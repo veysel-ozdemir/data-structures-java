@@ -2,8 +2,16 @@ package Heap;
 
 import java.util.Arrays;
 
+/* 
+    ******** FORMULA OF INDEXES *************
+    *   Node Index --> N                    *
+    *   Parent Index --> (N-1) / 2          *
+    *   Left Child Index --> (N * 2) + 1    *
+    *   Right Child Index --> (N * 2) + 2   *
+    *****************************************
+*/
 public class Heap {
-    
+
     static Node[] heapArray;
     int currentSize;
     int maxSize;
@@ -52,7 +60,7 @@ public class Heap {
         while(index < currentSize/2)// while node has at least one child
         {
             int leftChild = 2*index+1;
-            int rightChild = leftChild+1;
+            int rightChild = leftChild+1; // or 2*index+2
             // find larger child
             if( rightChild < currentSize && // (rightChild exists?)
                 heapArray[leftChild].getKey() < heapArray[rightChild].getKey() )
@@ -76,13 +84,11 @@ public class Heap {
         Heap theHeap = new Heap(size);
         // The efficiency of the heap data structure leads to a surprisingly simple and very efficient sorting algorithm called heapsort.
         // 1 - Insert all the unordered items into a heap using the insert() method
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < size; i++)
             theHeap.insert(unsortedArray[i]);
-        }
         // 2 - Remove the items in descending sorted order
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < size; i++)
             sortedArray[i] = theHeap.remove().getKey();
-        }
         System.out.println("Unsorted: \t" + Arrays.toString(unsortedArray));
         System.out.println("Sorted: \t" + Arrays.toString(sortedArray));
     }
